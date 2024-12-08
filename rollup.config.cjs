@@ -1,6 +1,5 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
-import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import json from "@rollup/plugin-json";
 import nodePolyfills from "rollup-plugin-polyfill-node";
@@ -35,7 +34,6 @@ export default [
       commonjs(),
       resolve(),
       nodePolyfills(),
-      terser(),
       json(),
     ],
   },

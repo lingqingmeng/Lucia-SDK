@@ -37,3 +37,10 @@ Welcome.html and use of sdk in its script script
 backend service console log for welcome page:
 
 <img width="1457" alt="image" src="https://github.com/ondecentral/Lucia-SDK/assets/91156430/00d59e43-57cd-4c7c-a37a-b4433a5ab37e">
+
+
+## Deployment instructions
+
+1. First make changes to the codebase
+2. Push changes to github
+3. Login to npm via command line and publish
