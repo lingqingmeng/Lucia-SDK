@@ -325,6 +325,7 @@ export default class Lucia{
 
     async authenticate(){
         console.log('inside authenticate');
+        console.log("this.api_key: ",this.api_key);
         const headers = {
             'Content-Type': 'application/json',
             'X-API-KEY': this.api_key
@@ -333,7 +334,7 @@ export default class Lucia{
             user: this.clientId,
             key: this.api_key
         };
-
+        console.log("JSON.stringify(req): ",JSON.stringify(req));
         await fetch(this.baseURL+'/api/key/auth',{
             method:'POST',
             headers:headers,
@@ -379,14 +380,18 @@ export default class Lucia{
         const request={
             client: this.clientId,
             page:page,
-            user: {name: this.user,
-                data: this.data}
+            user: {
+                name: this.user,
+                data: this.data
+            }
         }
+        console.log('pageview request',request);
+        console.log(`will reach this endpoint ${this.baseURL+'/sdk/page/'}`)
         const headers = {
             'Content-Type': 'application/json',
             'X-API-KEY': this.api_key
           }
-           await fetch(this.baseURL+'/api/sdk/page/',{
+        await fetch(this.baseURL+'/sdk/page/',{
             method:'POST',
             headers:headers,
             body: JSON.stringify(request)

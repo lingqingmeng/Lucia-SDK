@@ -9,6 +9,7 @@ import {
 
 export default class Lucia {
   constructor(options) {
+    console.log("Lucia SDK constructor called. Options:", options);
     this.clientId = options.clientId;
     this.baseURL = options.baseURL;
     this.api_key = options.api_key;
@@ -97,17 +98,21 @@ export default class Lucia {
         lid: lid,
         session: session,
       };
+      console.log('request',request);
       const headers = {
         "Content-Type": "application/json",
         "X-API-KEY": this.api_key,
       };
-      await fetch(this.baseURL + "/api/sdk/page/", {
+      console.log(`about to fetch this route in pageView${this.baseURL + "/sdk/page/"}`)
+      const payload = {
         method: "POST",
         headers: headers,
         body: JSON.stringify(request),
-      })
+      };
+      console.log('payload',payload);
+      await fetch(this.baseURL + "/sdk/page/", payload)
         .then((response) => {
-          //console.log(response);
+          console.log('response from pageView: ',response);
         })
         .catch((error) => {
           console.error(error.message);
