@@ -150,7 +150,7 @@ export default class Lucia {
         body: JSON.stringify(request),
       })
         .then((response) => {
-          //console.log(response);
+          console.log('response from trackConversion: ',response);
         })
         .catch((error) => {
           console.error(error);

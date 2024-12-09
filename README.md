@@ -43,4 +43,5 @@ backend service console log for welcome page:
 
 1. First make changes to the codebase
 2. Push changes to github
-3. Login to npm via command line and publish
+3. Update the version in package.json
+4. Login to npm via command line and publish

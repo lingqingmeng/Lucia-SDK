@@ -386,12 +386,12 @@ export default class Lucia{
             }
         }
         console.log('pageview request',request);
-        console.log(`will reach this endpoint ${this.baseURL+'/sdk/page/'}`)
+        console.log(`will reach this endpoint ${this.baseURL+'/api/sdk/page/'}`)
         const headers = {
             'Content-Type': 'application/json',
             'X-API-KEY': this.api_key
           }
-        await fetch(this.baseURL+'/sdk/page/',{
+        await fetch(this.baseURL+'/api/sdk/page/',{
             method:'POST',
             headers:headers,
             body: JSON.stringify(request)
